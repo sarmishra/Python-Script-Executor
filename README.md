@@ -1,6 +1,6 @@
 # Safe Script Executor
 
-A secure Flask-based API to run untrusted Python scripts inside an isolated sandbox using [nsjail](https://github.com/google/nsjail).
+A secure Flask-based API to run Python scripts inside an isolated sandbox using [nsjail](https://github.com/google/nsjail).
 
 ---
 
@@ -10,7 +10,7 @@ A secure Flask-based API to run untrusted Python scripts inside an isolated sand
 - `main()` **must return a JSON-serializable object**
 - Output includes:
   - `result`: the return of `main()`
-  - `stdout`: all `print()` output (excluding the last JSON line)
+  - `stdout`: all `print()` output
 
 ## ✅ Features
 
@@ -38,7 +38,7 @@ curl -X POST http://localhost:8080/execute \
   -H "Content-Type: application/json" \
   -d '{"script": "def main():\n  return {\"message\": \"hello\"}"}'
 ```
-
+`Output:` {"result":{"message":"hello"},"stdout":""}
 ---
 
 ## 📁 Files
@@ -49,4 +49,4 @@ curl -X POST http://localhost:8080/execute \
 - `requirements.txt` – Flask dependency
 - `Dockerfile` – 3-stage Docker setup
 - `.gitignore` – Common git ignore files
-- `.dockerignore` – Common docker ignore files
+- `.dockerignore` – Common Docker ignore files
