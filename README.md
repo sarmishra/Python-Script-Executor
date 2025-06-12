@@ -37,9 +37,11 @@ docker run --cap-add=SYS_ADMIN --security-opt seccomp=unconfined -p 8080:8080 sa
 curl -X POST http://localhost:8080/execute \
   -H "Content-Type: application/json" \
   -d '{"script": "def main():\n  return {\"message\": \"hello\"}"}'
+
+Response: {"result":{"message":"hello"},"stdout":""}
+
 ```
 ---
-`Output:` {"result":{"message":"hello"},"stdout":""}
 
 ## 📁 Files
 
