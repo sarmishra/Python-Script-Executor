@@ -6,8 +6,8 @@ A secure Flask-based API to run Python scripts inside an isolated sandbox using 
 
 ## ✅ Requirements
 
-- The input script **must define a `main()` function**
-- `main()` **must return a JSON-serializable object**
+- The input script **must define a `main()` function**, otherwise throw an error
+- `main()` **must return a JSON-serializable object**, otherwise throw an error
 - Output includes:
   - `result`: the return of `main()`
   - `stdout`: all `print()` output
